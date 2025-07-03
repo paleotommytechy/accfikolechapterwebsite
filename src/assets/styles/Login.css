@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ecf0f3;
+}
+
+
+.neumorphic-card {
+  background: #ecf0f3;
+  box-shadow: 10px 10px 30px #cbced1, -10px -10px 30px #fff;
+  width: 100%;
+  max-width: 350px;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(120, 216, 230, 1.0);
+  padding: 8px;
+}
+
+.neumorphic-input {
+  background: #ecf0f3;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 10px #cbced1,inset -5px -5px 10px #ffffff;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.neumorphic-input i {
+  font-size: 1rem;
+  margin: 0;
+}
+small{
+  text-decoration: none;
+  color: black;
+}
