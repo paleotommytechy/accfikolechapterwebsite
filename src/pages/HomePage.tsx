@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 
 const HomePage: React.FC = () => {
   return (
-    <>
+    <div style={{ overflowX: 'hidden', width: '100%', margin: 0, padding: 0 }}>
       <NavBar />
       <HeroSection />
       <AboutFellowship />
@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
       <StoriesSlider />
       <ContactUs />
       <Footer />
-    </>
+    </div>
   )
 }
 
