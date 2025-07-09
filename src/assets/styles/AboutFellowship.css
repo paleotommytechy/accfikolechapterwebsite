@@ -1,0 +1,11 @@
+/* src/components/AboutFellowship.css */
+.about-section h2 {
+  color: #003366;
+}
+
+.about-section ul li {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}

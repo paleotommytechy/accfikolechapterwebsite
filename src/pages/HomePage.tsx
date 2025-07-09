@@ -1,12 +1,26 @@
-import React from 'react'
-import '../assets/styles/NavBar.css'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import '../assets/styles/NavBar.css';
+import NavBar from '../components/NavBar';
+import HeroSection from '../components/HeroSection';
+import AboutFellowship from '../components/AboutFellowship';
+import SermonInfo from '../components/SermonInfo';
+import UpcomingEvent from '../components/UpcomingEvent';
+import StoriesSlider from '../components/StoriesSlider';
+import ContactUs from '../components/ContactUs';
+import Footer from '../components/Footer';
 
 
 const HomePage: React.FC = () => {
   return (
     <>
-    <div >HomePage<Link className="btn btn-primary rounded-4 d-flex align-item-center justify-content-center mx-4 w-50" to='/login'>Click to Login</Link></div>
+      <NavBar />
+      <HeroSection />
+      <AboutFellowship />
+      <SermonInfo />
+      <UpcomingEvent />
+      <StoriesSlider />
+      <ContactUs />
+      <Footer />
     </>
   )
 }

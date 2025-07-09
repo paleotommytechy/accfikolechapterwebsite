@@ -1,8 +1,10 @@
 import { Routes, Route} from 'react-router-dom';
 import React from 'react';
 import HomePage from './pages/HomePage';
-import LoginForm from './components/Login';
-import RegisterForm from './components/Register';
+import LoginForm from './pages/Login';
+import RegisterForm from './pages/Register';
+
+
 
 
 

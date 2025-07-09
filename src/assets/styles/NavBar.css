@@ -1,0 +1,10 @@
+.link-to-page:hover,
+.link-to-page:active{
+	background: blue;
+	color: white;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+.logo img{
+	border-radius: 50px;
+}
