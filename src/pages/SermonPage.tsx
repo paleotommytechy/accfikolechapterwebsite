@@ -4,9 +4,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import SermonGrid from '../components/SermonGrid';
-import HeroSection from '../components/HeroSection'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Img from '../assets/images/baptism.jpg'
 
 const SermonPage = () => {
   useEffect(() => {
@@ -16,7 +16,17 @@ const SermonPage = () => {
   return (
     <>
       <Navbar />
-      <HeroSection />
+      <div 
+        className="d-flex align-items-center text-white z-1"
+        style={{
+          position: 'relative',
+          height: '60vh',
+          background: `url(${Img})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'center'
+        }}>
+      
+      </div>
       <section className="py-5">
         <Container>
           <Row className="text-center mb-4">
