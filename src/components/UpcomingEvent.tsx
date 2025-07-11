@@ -20,7 +20,7 @@ const UpcomingEvent = () => {
           </Col>
         </Row>
         <Row className="justify-content-center" data-aos="fade-up">
-          <Col md={8}>
+          <Col md={8}> 
             <Card className="border-0 shadow-sm p-4">
             <Col md={5}>
                   <Card.Img
@@ -33,7 +33,7 @@ const UpcomingEvent = () => {
                 <Card.Title className="fw-bold fs-4 mb-3">Online Word and Prayer Meeting</Card.Title>
                 <Card.Text className="mb-2">
                   <FaCalendarAlt className="me-2 text-primary" />
-                  <strong>Date:</strong> 19th of July, 2025
+                  <strong>Date:</strong> 18th of July, 2025
                 </Card.Text>
                 <Card.Text>
                   <FaMapMarkerAlt className="me-2 text-primary" />

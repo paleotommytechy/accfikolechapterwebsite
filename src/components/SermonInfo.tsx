@@ -1,7 +1,7 @@
 // src/components/SermonInfo.tsx
 import { useEffect } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import sermonImage from '../assets/images/pastor 2.jpg';
+import sermonImage from '../assets/images/precious.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -28,18 +28,24 @@ const SermonInfo = () => {
                     src={sermonImage}
                     alt="Sermon"
                     className="img-fluid rounded-start"
+                    
                   />
                 </Col>
                 <Col md={7}>
                   <Card.Body>
                     <Card.Title className="fw-bold">Walking in Purpose</Card.Title>
                     <Card.Text>
-                      <small className="text-muted">By Pastor Ariyo · July 6, 2025</small>
+                      <small className="text-muted">By Brother Precious · July 6, 2025</small>
                     </Card.Text>
                     <Card.Text>
                       Discover how to align your life with God’s purpose and walk boldly in your calling.
                     </Card.Text>
-                    <Button variant="primary" href="/sermons">
+                    <Button 
+                      style={{
+                        background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+                        color: '#fff',
+                      }} 
+                      href="/sermons">
                       View Full Sermon
                     </Button>
                   </Card.Body>

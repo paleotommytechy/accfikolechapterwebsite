@@ -1,7 +1,7 @@
 // src/data/articles.ts
-import articles1 from '../assets/images/logos.jpg'
+import articles1 from '../assets/images/agailio.jpg'
 import articles2 from '../assets/images/prayer.jpg'
-import articles3 from '../assets/images/epignosis.jpg'
+import articles3 from '../assets/images/image6.jpg'
 
 export const articles = [
   {

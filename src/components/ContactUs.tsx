@@ -25,9 +25,9 @@ const ContactUs = () => {
 
             <h5 className="fw-semibold mt-4">Service Times</h5>
             <ul className="list-unstyled">
-              <li><strong>Wednesday:</strong> 5:00 PM – 6:30 PM</li>
-              <li><strong>Friday:</strong> 5:00 PM – 6:00 PM</li>
-              <li><strong>Sunday:</strong> 8:00 AM – 11:00 AM</li>
+              <li><strong>Wednesday:</strong> Weekly Bible Study (5:00 PM – 6:30 PM)</li>
+              <li><strong>Friday:</strong> Weekly Prayer Metting (5:00 PM – 6:00 PM)</li>
+              <li><strong>Sunday:</strong> Glorious Sunday Service (8:00 AM – 11:00 AM)</li>
             </ul>
 
             <h5 className="fw-semibold mt-4">Location Map</h5>
@@ -60,7 +60,12 @@ const ContactUs = () => {
                 <Form.Control as="textarea" rows={4} placeholder="Your message..." required />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button 
+                style={{
+                  background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+                  color: '#fff',
+                }}
+                type="submit">
                 Send Message
               </Button>
             </Form>
