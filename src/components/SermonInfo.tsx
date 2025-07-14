@@ -1,7 +1,7 @@
 // src/components/SermonInfo.tsx
 import { useEffect } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import sermonImage from '../assets/images/precious.jpg';
+import sermonImage from '../assets/images/executives/precious.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

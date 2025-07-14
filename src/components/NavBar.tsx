@@ -47,7 +47,7 @@ const Navbar = () => {
             <li className="nav-item"> <Link className="nav-link" to="/blog">Blog</Link></li>
             <li className="nav-item"> <Link className="nav-link" to="/academics">Academics</Link></li>
             <li className="nav-item"> <Link className="nav-link" to="/gallery">Gallery</Link></li>
-            <li className="nav-item"> <Link className="nav-link" to="contact">Contact</Link></li>
+            <li className="nav-item"> <Link className="nav-link" to="/contact">Contact</Link></li>
             <li className="nav-item"> <Link className="nav-link btn btn-outline-primary ms-2" to="/donate">Donate</Link></li>
           </ul>
         </div>
@@ -92,26 +92,28 @@ const Navbar = () => {
                 <Link className="nav-link text-white" to="/events" onClick={toggleSidebar}><FaCalendarAlt/> Events</Link>
               </li>
               <li className="nav-item link-to-page">
-                <Link className="nav-link text-white" to="/events" onClick={toggleSidebar}><FaBlog/> Blog</Link>
+                <Link className="nav-link text-white" to="/blog" onClick={toggleSidebar}><FaBlog/> Blog</Link>
               </li>
               <li className="nav-item link-to-page">
-                <Link className="nav-link text-white" to="/donate" onClick={toggleSidebar}><FaGraduationCap/> Academics</Link>
+                <Link className="nav-link text-white" to="/academics" onClick={toggleSidebar}><FaGraduationCap/> Academics</Link>
               </li>
               <li className="nav-item link-to-page">
-                <Link className="nav-link text-white" to="/events" onClick={toggleSidebar}><FaImages/> Gallery</Link>
+                <Link className="nav-link text-white" to="/gallery" onClick={toggleSidebar}><FaImages/> Gallery</Link>
               </li>
               <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/contact" onClick={toggleSidebar}><FaEnvelope/> Contact</Link>
               </li>
               
               <li className="nav-item d-flex gap-3 mt-2">
-                <a className="text-white fs-5" href="https://facebook.com" target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i></a>
-                <a className="text-white fs-5" href="https://instagram.com" target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i></a>
+                <a className="text-white fs-5" href="https://www.facebook.com/profile.php?id=61560232723803" target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i></a>
+                <a className="text-white fs-5" href="https://www.instagram.com/accf_ikole_chapter?igsh=YzljYk1ODg3Zg==" target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i></a>
+                <a className="text-white fs-5" href="https://t.me/+2qOc-V6sx6g0MzM0" target="_blank" rel="noreferrer"><i className="bi bi-telegram"></i></a>
                 <a className="text-white fs-5" href="https://youtube.com" target="_blank" rel="noreferrer"><i className="bi bi-youtube"></i></a>
                 <a className="text-white fs-5" href="https://x.com" target="_blank" rel="noreferrer"><i className="bi bi-twitter"></i></a>
               </li>
               <li className="nav-item mt-0">
-                <button
+                <Link
+                  to='/donate'
                   className="btn w-100 text-white"
                   style={{
                     background: 'linear-gradient(to right, #a855f7, #fb923c)',
@@ -120,8 +122,9 @@ const Navbar = () => {
                     fontWeight: 'bold',
                   }}
                 >
+
                   Donations
-                </button>
+                </Link>
               </li>
             </ul>
           </nav>

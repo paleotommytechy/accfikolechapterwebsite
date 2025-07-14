@@ -1,8 +1,9 @@
 // src/components/ContactUs.tsx
 import { useEffect } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ContactForm from "../components/ContactForm";
 
 const ContactUs = () => {
   useEffect(() => {
@@ -33,7 +34,7 @@ const ContactUs = () => {
             <h5 className="fw-semibold mt-4">Location Map</h5>
             <div className="ratio ratio-4x3">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.999235634768!2d3.896143114775068!3d7.377535694662096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ec8aa0c4a1c5%3A0x79fcb9253adcbfc9!2sUniversity%20of%20Ibadan!5e0!3m2!1sen!2sng!4v1629987555950!5m2!1sen!2sng"
+                src="https://www.google.com/maps?q=7.3775,3.9470&output=embed"
                 title="ACCF Location"
                 allowFullScreen
                 loading="lazy"
@@ -43,32 +44,7 @@ const ContactUs = () => {
 
           {/* Right - Contact Form */}
           <Col md={6} data-aos="fade-left">
-            <h5 className="fw-semibold mb-3">Send a Message</h5>
-            <Form>
-              <Form.Group className="mb-3" controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" required />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter your email" required />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formMessage">
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={4} placeholder="Your message..." required />
-              </Form.Group>
-
-              <Button 
-                style={{
-                  background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
-                  color: '#fff',
-                }}
-                type="submit">
-                Send Message
-              </Button>
-            </Form>
+            <ContactForm />
           </Col>
         </Row>
       </Container>

@@ -1,7 +1,7 @@
 // src/data/sermons.ts
-import sermon1 from '../assets/images/precious.jpg'
-import sermon2 from '../assets/images/toluwanimi.jpg'
-import sermon3 from '../assets/images/pastor 2.jpg'
+import sermon1 from '../assets/images/executives/precious.jpg'
+import sermon2 from '../assets/images/executives/toluwanimi.jpg'
+import sermon3 from '../assets/images/prayer.jpg'
 
 export const sermons = [
   {

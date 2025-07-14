@@ -48,15 +48,18 @@ const EventPage: React.FC = () => {
           backgroundRepeat: 'center',
           borderRadius: '0 0 15px 15px'
         }}>
-      <p className=''style={{margin:'240px 0 0 50px'}}>
-        <Link to="/" className="text-white fw-bold text-decoration-none fs-6">HOME</Link>
-        &nbsp;&nbsp;|| &nbsp;&nbsp;
-        <Link to='/events' className="text-white fw-bold text-decoration-none fs-6">
-          EVENTS
-        </Link>
-      </p>
+      <div style={{margin:'240px 0 0 50px'}}>
+        <h1>EVENTS</h1>
+        <p>
+          <Link to="/" className="text-white fw-bold text-decoration-none fs-6">HOME</Link>
+          &nbsp;&nbsp;|| &nbsp;&nbsp;
+          <Link to='/events' className="text-white fw-bold text-decoration-none fs-6">
+            EVENTS
+          </Link>
+        </p>
+      </div>
     </div>
-    <div className="container py-5 mt-0">
+    <div className="container py-5 mt-0" data-aos='fade-down'>
       
       {/* -------- Bootstrap Nav Tabs -------- */}
       <ul className="nav nav-tabs justify-content-center mt-0" role="tablist">

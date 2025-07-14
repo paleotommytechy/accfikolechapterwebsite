@@ -27,13 +27,16 @@ const SermonPage = () => {
           backgroundRepeat: 'center',
           borderRadius: '0 0 15px 15px'
         }}>
-        <p className=''style={{margin:'240px 0 0 50px'}}>
-          <Link to="/" className="text-white fw-bold text-decoration-none fs-6">HOME</Link>
-          &nbsp;&nbsp;|| &nbsp;&nbsp;
-          <Link to='/sermons' className="text-white fw-bold text-decoration-none fs-6">
-            SERMONS 
-          </Link>
-        </p>
+        <div style={{margin:'240px 0 0 50px'}}>
+          <h1>SERMONS</h1>
+          <p>
+            <Link to="/" className="text-white fw-bold text-decoration-none fs-6">HOME</Link>
+            &nbsp;&nbsp;|| &nbsp;&nbsp;
+            <Link to='/sermons' className="text-white fw-bold text-decoration-none fs-6">
+              SERMONS 
+            </Link>
+          </p>
+        </div>
       </div>
       <section className="py-5">
         <Container>

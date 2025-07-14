@@ -18,8 +18,9 @@ export const articles = [
   },
   {
     id: 3,
-    title: 'The Power of Christian Fellowship',
+    title: 'God is Love',
     image: articles3,
-    snippet: 'You are not alone! Surrounding yourself with godly friends can change your walk with God.',
+    snippet: 'Love is a must for all believers, because God is love, any believer that want to grow must LOVE.',
   },
 ];
+

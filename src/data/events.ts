@@ -1,6 +1,6 @@
 import image1 from "../assets/images/epignosis.jpg"
 import image2 from "../assets/images/prayer.jpg"
-import image3 from "../assets/images/NFC_2025.jpg"
+import image3 from "../assets/images/events/NFC_2025.jpg"
 import image4 from "../assets/images/logos.jpg"
 
 export const events = [
@@ -22,7 +22,7 @@ export const events = [
   },
   {
     title: "Weekly Bible Study",
-    date: "2025-09-17",
+    date: "2025-04-17",
     time: "5:00 PM",
     location: "Main Auditorium, ACCF ikole Campus, Ikole Ekiti",
     description: "Deep dive into scripture with dynamic speakers.",

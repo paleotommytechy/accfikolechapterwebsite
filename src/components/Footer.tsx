@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <Col md={4} className="logo">
             <img src={logo} alt="ACCF Logo" height="50" className="mb-3" />
-            <p style={{lineHeight:1.6}}><strong>All Christian Campus Fellowship (ACCF)</strong> — raising godly students in the knowledge and power of Christ Jesus.</p>
+            <p style={{lineHeight:1.6}}><strong>All Christian Campus Fellowship (ACCF)</strong> — Raising godly students in the knowledge and power of Christ Jesus.<br/>A Fellowship with a difference. We Preach, Teach and Pray. </p>
           </Col>
 
           {/* Quick Links */}
@@ -32,6 +32,7 @@ const Footer = () => {
             'Academics',
             'Gallery',
             'Contact',
+            'Donation'
           ].map((link, index)=>(
 
             <a
