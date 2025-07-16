@@ -34,7 +34,7 @@ const ContactUs = () => {
             <h5 className="fw-semibold mt-4">Location Map</h5>
             <div className="ratio ratio-4x3">
               <iframe
-                src="https://www.google.com/maps?q=7.3775,3.9470&output=embed"
+                src="https://www.google.com/maps?q=7.798266,5.514493&output=embed"
                 title="ACCF Location"
                 allowFullScreen
                 loading="lazy"

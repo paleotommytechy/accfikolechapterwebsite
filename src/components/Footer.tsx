@@ -32,7 +32,7 @@ const Footer = () => {
             'Academics',
             'Gallery',
             'Contact',
-            'Donation'
+            'Donate'
           ].map((link, index)=>(
 
             <a
