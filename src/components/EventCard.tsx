@@ -1,4 +1,4 @@
-// src/components/EventCard.tsx
+// src/components/EventCard.tsx 
 import React from "react";
 
 type EventProps = {

@@ -1,6 +1,7 @@
 // FeaturedCard.tsx
 import React from "react";
-import type { Blog } from "../../data/blogs";
+// import type { Blog } from "../../data/blogs";
+import type { Blog } from "../../types/blog";
 import { useNavigate } from "react-router-dom";
 
 const FeaturedCard: React.FC<{ post: Blog }> = ({ post }) => {
@@ -9,7 +10,7 @@ const FeaturedCard: React.FC<{ post: Blog }> = ({ post }) => {
     <div
       className="card text-white border-0 rounded-4 overflow-hidden mb-4 position-relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${post.image})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${post.image_url})`,
         backgroundSize: "cover",
         height: 260,
         cursor: "pointer",

@@ -1,13 +1,42 @@
-import { useEffect } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import {Link} from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import EventImage from '../assets/images/logos.jpg';
+import { supabase } from '../lib/supabaseClient';
+
+type Event = {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+  image_url: string;
+};
 
 const UpcomingEvent = () => {
+  const [event, setEvent] = useState<Event | null>(null);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    const fetchUpcoming = async () => {
+      const today = new Date().toISOString().split('T')[0];
+
+      const { data, error } = await supabase
+        .from('events')
+        .select('*')
+        .gte('date', today)
+        .order('date', { ascending: true })
+        .limit(1);
+
+      if (error) console.error('Error fetching upcoming event:', error);
+      else setEvent(data?.[0] || null);
+    };
+
+    fetchUpcoming();
   }, []);
 
   return (
@@ -20,28 +49,36 @@ const UpcomingEvent = () => {
           </Col>
         </Row>
         <Row className="justify-content-center" data-aos="fade-up">
-          <Col md={8}> 
+          <Col md={8}>
             <Card className="border-0 shadow-sm p-4">
-            <Col md={5}>
-                  <Card.Img
-                    src={EventImage}
-                    alt="Sermon"
-                    className="img-fluid rounded-start"
-                  />
-                </Col>
+              <Col md={5}>
+                <Card.Img
+                  src={event?.image_url}
+                  alt={event?.title}
+                  className="img-fluid rounded-start"
+                />
+              </Col>
               <Card.Body>
-                <Card.Title className="fw-bold fs-4 mb-3">Online Word and Prayer Meeting</Card.Title>
+                <Card.Title className="fw-bold fs-4 mb-3">
+                  {event?.title}
+                </Card.Title>
                 <Card.Text className="mb-2">
                   <FaCalendarAlt className="me-2 text-primary" />
-                  <strong>Date:</strong> 18th of July, 2025
+                  <strong>Date:</strong>{' '}
+                  {event?.date
+                    ? new Date(event.date).toLocaleDateString(undefined, {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })
+                    : '18th of July, 2025'}
                 </Card.Text>
                 <Card.Text>
                   <FaMapMarkerAlt className="me-2 text-primary" />
-                  <strong>Location:</strong> Google Meet
+                  <strong>Location:</strong> {event?.location}
                 </Card.Text>
-                <Button variant="outline-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer" className="mt-3">
-                  Join on Google Meet
-                </Button>
+                
+                <Link to="/events" className="btn btn-outline-primary">Learn More</Link>
               </Card.Body>
             </Card>
           </Col>

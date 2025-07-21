@@ -9,24 +9,18 @@ import StoriesSlider from '../components/StoriesSlider';
 import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 import FamilySong from "../components/FamilySong"
-
-import fyb from '../assets/images/gallery/events/image (5).jpg'
+import AcademicRedirectCard from '../components/AcademicRedirectCard';
 
 
 const HomePage: React.FC = () => {
   return (
+    
     <div style={{ overflowX: 'hidden', width: '100%', margin: 0, padding: 0 }}>
       <NavBar />
       <HeroSection />
       <AboutFellowship />
-      <div>
-        <img
-          src={fyb}
-          alt="About Fellowship"
-          className="img-fluid rounded shadow"
-        />
-      </div>
       <FamilySong />
+      <AcademicRedirectCard />
       <SermonInfo />
       <UpcomingEvent />
       <StoriesSlider />

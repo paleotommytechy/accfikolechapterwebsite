@@ -1,7 +1,7 @@
 import image1 from "../assets/images/epignosis.jpg"
 import image2 from "../assets/images/prayer.jpg"
 import image3 from "../assets/images/events/NFC_2025.jpg"
-import image4 from "../assets/images/logos.jpg"
+import image4 from "../assets/images/events/OWPP.jpg"
 
 export const events = [
   {
@@ -14,8 +14,8 @@ export const events = [
   },
   {
     title: "Online Word and Prayer Meeting",
-    date: "2025-07-18",     
-    time: "6:00 PM",
+    date: "2025-07-25",     
+    time: "8:00 PM",
     location: "Google Meet",
     description: "A place of encounter with the word and spirit of God.",
     image: image4,

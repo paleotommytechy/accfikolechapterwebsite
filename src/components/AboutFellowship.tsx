@@ -1,24 +1,37 @@
 // src/components/AboutFellowship.tsx
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import fellowshipImage from '../assets/images/judah.jpg';
 import { FaCross, FaBible, FaPrayingHands } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../assets/styles/AboutFellowship.css';
 
+import images from '../data/FellowshipImages';
+
+
+
+
 const AboutFellowship = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   useEffect(() => {
     AOS.init({ duration: 1000 });
+  }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1)% images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="about-section py-5 bg-light" id="about">
       <Container>
         <Row className="align-items-center">
-          <Col md={6} data-aos="fade-right">
+          <Col md={6} data-aos={images[currentImageIndex].animation}>
             <img
-              src={fellowshipImage}
+              src={images[currentImageIndex].src}
               alt="About Fellowship"
               className="img-fluid rounded shadow"
             />
