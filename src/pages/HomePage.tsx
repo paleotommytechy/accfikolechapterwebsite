@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       <NavBar />
       <HeroSection />
       <AboutFellowship />
-      <FamilySong />
+      <div className="container py-4 px-6"><FamilySong /></div>
       <AcademicRedirectCard />
       <SermonInfo />
       <UpcomingEvent />

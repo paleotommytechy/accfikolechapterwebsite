@@ -40,7 +40,7 @@ const UpcomingEvent = () => {
   }, []);
 
   return (
-    <section className="py-5 bg-white" id="event">
+    <section className="py-2 bg-white" id="event">
       <Container>
         <Row className="justify-content-center mb-4" data-aos="fade-up">
           <Col md={8} className="text-center">
@@ -70,8 +70,7 @@ const UpcomingEvent = () => {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
-                      })
-                    : '18th of July, 2025'}
+                      }):'No date Provided'}
                 </Card.Text>
                 <Card.Text>
                   <FaMapMarkerAlt className="me-2 text-primary" />

@@ -17,7 +17,7 @@ const StoriesSlider = () => {
   }, []);
 
   return (
-    <section className="py-5 bg-light" id="stories">
+    <section className="py-3 bg-light" id="stories">
       <Container>
         <Row className="mb-4 text-center">
           <h2 className="fw-bold">Stories & Articles</h2>

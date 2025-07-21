@@ -13,27 +13,40 @@ import images from '../data/FellowshipImages';
 
 const AboutFellowship = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+  const [paused, setPaused] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
   useEffect(() => {
+    AOS.refresh();
+  }, [currentImageIndex]);
+
+  useEffect(() => {
+    if (paused) return;
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1)% images.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [paused, currentImageIndex]);
 
   return (
+    <>
     <section className="about-section py-5 bg-light" id="about">
       <Container>
         <Row className="align-items-center">
-          <Col md={6} data-aos={images[currentImageIndex].animation}>
+          <Col md={6} 
+            data-aos={images[currentImageIndex].animation}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
             <img
               src={images[currentImageIndex].src}
               alt="About Fellowship"
-              className="img-fluid rounded shadow"
+              className="img-fluid rounded shadow "
             />
           </Col>
           <Col md={6} data-aos="fade-left">
@@ -53,6 +66,7 @@ const AboutFellowship = () => {
         </Row>
       </Container>
     </section>
+    </>
   );
 };
 
