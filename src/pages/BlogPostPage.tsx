@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { blogs } from "../data/blogs";
+import { supabase } from "../lib/supabaseClient";
+import type { Blog } from "../types/blog";
+// import { blogs } from "../data/blogs";
 import { FaHeart, FaRegHeart, FaShareAlt } from "react-icons/fa";
 import { useState } from "react";
 import { format } from "date-fns";
@@ -8,9 +10,42 @@ import { format } from "date-fns";
 import Img from "../assets/images/image7.jpg"
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const BlogPostPage: React.FC = () => {
+ // Fetch data from supabase
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const fetchBlogs = async () => {
+    const { data, error } = await supabase
+      .from("blogs")
+      .select("*")
+      .order("date", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching blogs:", error);
+    } else {
+      setBlogs(data || []);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+
+    const channel = supabase
+      .channel("blogs-realtime")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "blogs" },
+        () => fetchBlogs()
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
+
+  
   const { id } = useParams();
   const post = blogs.find(b => b.id === id);
   const [liked, setLiked] = useState(false);
@@ -47,11 +82,11 @@ const BlogPostPage: React.FC = () => {
     <div className="container py-5">
       <h2 className="fw-bold mb-1">{post.title}</h2>
       <p className="text-muted mb-4">
-        {post.author.name} • {format(new Date(post.date), "MMM d, yyyy")}
+        {post.author_name} • {format(new Date(post.date), "MMM d, yyyy")}
       </p>
 
       {/* Thumbnail / hero */}
-      <img src={post.image} className="img-fluid rounded mb-4" alt={post.title} data-aos="zoom-in" />
+      <img src={post.thumbnail_url} className="img-fluid rounded mb-4" alt={post.title} data-aos="zoom-in" />
 
       {/* Body – assuming HTML/markdown already converted */}
       <div dangerouslySetInnerHTML={{ __html: post.body }} />

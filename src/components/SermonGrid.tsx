@@ -1,7 +1,18 @@
 import { Card, Col, Row, Button } from 'react-bootstrap';
-import { sermons } from '../data/sermons';
+// import { sermons } from '../data/sermons';
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 const SermonGrid = () => {
+  const [sermons, setSermons] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await supabase.from("sermons").select("*").order("date", { ascending: false });
+      setSermons(data || []);
+    };
+    fetch();
+  }, []);
   return (
     <Row className="g-4" data-aos="fade-up">
       {sermons.map((sermon) => (

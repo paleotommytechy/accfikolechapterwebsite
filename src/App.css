@@ -1,3 +1,29 @@
-body{
-	background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+  background: linear-gradient(
+    270deg,
+    #ff4b2b,
+    #ff416c,
+    #1fa2ff,
+    #12d8fa,
+    #a6ffcb,
+    #ff4b2b
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 8s ease infinite;
+}
+
+@keyframes shineText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

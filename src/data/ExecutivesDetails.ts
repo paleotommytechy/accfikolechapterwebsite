@@ -1,4 +1,4 @@
-import pastorAriyo from "../assets/images/pastor 2.jpg"
+import pastorAriyo from "../assets/images/executives/Pastor_Ariyo.jpg"
 import ifeoluwa from "../assets/images/executives/ifeoluwa.jpg"
 import precious from "../assets/images/executives/precious.jpg"
 import toluwanimi from "../assets/images/executives/toluwanimi.jpg"
@@ -8,12 +8,17 @@ import mary from "../assets/images/executives/Mary.jpg"
 import nife from "../assets/images/executives/Oluwanifemi.jpg"
 import samuel from "../assets/images/executives/Samuel.jpeg"
 import ayodeji from "../assets/images/executives/Ayodeji.jpeg"
-
+import peter from "../assets/images/executives/peter.jpg"
+import marvelous from "../assets/images/executives/marvelous.jpg"
+import jedi from "../assets/images/executives/jedi.jpg"
+import ife from "../assets/images/executives/ife.jpg"
+import paul from "../assets/images/executives/paul.jpg"
+import temi from "../assets/images/executives/Temitope.jpg"
 
 
 export const pastor = {
   name: "Pastor Ariyo",
-  role: "Lead Pastor",
+  role: "Fellowship Pastor",
   image: pastorAriyo,
   bio: "A passionate servant of God with a heart for students and discipleship.",
 };
@@ -48,12 +53,21 @@ export const executives = [
   },
   {
     name: "Adewale Mary",
-    position: "Sister Coordinator",
+    position: "Sister's Coordinator",
     image: mary,
     whatsapp: "2349117698860",
     facebook: "https://facebook.com/",
     phone: "09117698860",
     email: "ola@gmail.com",
+  },
+  {
+    name: "Adebule Toluwani",
+    position: "Welfare and Financial Secetrary",
+    image: jedi,
+    whatsapp: "2347025953133",
+    facebook: "https://facebook.com/",
+    phone: "07025953133",
+    email: "adebuletoluwani23@gmail.com",
   },
   {
     name: "Adedokun Toluwanimi",
@@ -62,7 +76,7 @@ export const executives = [
     whatsapp: "2349012423537",
     facebook: "https://facebook.com/",
     phone: "07031355366",
-    email: "david@example.com",
+    email: "aadedokun000@gmail.com",
   },
   {
     name: "Akinboyewa Precious",
@@ -71,7 +85,7 @@ export const executives = [
     whatsapp: "234",
     facebook: "https://facebook.com/",
     phone: "08098765432",
-    email: "david@example.com",
+    email: "preciousakinboyewa@gmail.com",
   },
   {
     name: "Moyaki Oluwanifemi",
@@ -80,17 +94,17 @@ export const executives = [
     whatsapp: "2349043542068",
     facebook: "https://facebook.com/",
     phone: "09043542068",
-    email: "david@example.com",
+    email: "nifemoy@gmail.com",
   },
-  // {
-  //   name: "Olagunju Temitope Samuel",
-  //   position: "Academic Coordinator",
-  //   image: precious,
-  //   whatsapp: "2347042350755",
-  //   facebook: "https://facebook.com/",
-  //   phone: "07042350755",
-  //   email: "david@example.com",
-  // },
+  {
+    name: "Olagunju Temitope Samuel",
+    position: "Academic Coordinator",
+    image: temi,
+    whatsapp: "2347042350755",
+    facebook: "https://facebook.com/",
+    phone: "07042350755",
+    email: "samueltemmyoluwaseun@gmail.com",
+  },
   {
     name: "Michael Samuel",
     position: "Prayer Coordinator",
@@ -98,8 +112,36 @@ export const executives = [
     whatsapp: "2347061709390",
     facebook: "https://facebook.com/",
     phone: "08107790571",
-    email: "david@example.com",
+    email: "nimrodsamuel128@gmail.com",
   },
+  {
+    name: "Johnson Peter",
+    position: "Media Coordinator",
+    image: peter,
+    whatsapp: "2348142382505",
+    facebook: "https://facebook.com/",
+    phone: "08142382505",
+    email: "Peteroluwasegun2002@gmail.com",
+  },
+  {
+    name: "Adekola Paul",
+    position: "Technical Coordinator",
+    image: paul,
+    whatsapp: "2347040179796",
+    facebook: "https://facebook.com/",
+    phone: "07040179796",
+    email: "essentialtml01@gmail.com",
+  },
+  // {
+  //   name: "Olatokun peace",
+  //   position: "Drama Coordinator",
+  //   image: samuel,
+  //   whatsapp: "2349073204187",
+  //   facebook: "https://facebook.com/",
+  //   phone: "09073204187",
+  //   email: "peaceolatokun02@gmail.com",
+  // },
+
 
   //Assistant Executives
   {
@@ -109,15 +151,24 @@ export const executives = [
     whatsapp: "2347062084780",
     facebook: "https://facebook.com/",
     phone: "07062084780",
-    email: "david@example.com",
+    email: "ayoiseabo@gmail.com",
   },
-  // {
-  //   name: "Esan Ifeoluwa",
-  //   position: "Assistant Choir Coordinator",
-  //   image: precious,
-  //   whatsapp: "2349068039644",
-  //   facebook: "https://facebook.com/",
-  //   phone: "09068039644",
-  //   email: "david@example.com",
-  // },
+  {
+    name: "Esan Ifeoluwa",
+    position: "Assistant Choir Coordinator",
+    image: ife,
+    whatsapp: "2349068039644",
+    facebook: "https://facebook.com/",
+    phone: "09068039644",
+    email: "ifeoluwaesan52@gmail.com",
+  },
+  {
+    name: "Aribisala Marvelous",
+    position: "Assistant Sister's Coordinator",
+    image: marvelous,
+    whatsapp: "2349161083133",
+    facebook: "https://facebook.com/",
+    phone: "09161083133",
+    email: "aribisalamarvellous22@gmail.com",
+  },
 ];

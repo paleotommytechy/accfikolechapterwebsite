@@ -4,6 +4,7 @@
   background: url('../images/image5.jpg') center/cover no-repeat;
   position: relative;
   z-index: 1;
+  border-radius: 0 0 15px 15px ;
 }
 
 .hero-section::before {
@@ -15,6 +16,7 @@
   width: 100%;
   background: rgba(0, 0, 0, 0.5); /* dark overlay */
   z-index: -1;
+  border-radius: 0 0 15px 15px ;
 }
 
 .hero-section h1,
