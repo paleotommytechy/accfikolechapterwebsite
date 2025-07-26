@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 import type { Blog } from "../types/blog";
-// import { blogs } from "../data/blogs";
-import { FaHeart, FaRegHeart, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
 import { format } from "date-fns";
+import { FaHeart, FaRegHeart, FaShareAlt, FaCommentDots, FaUserPlus } from "react-icons/fa";
 
-import Img from "../assets/images/image7.jpg"
-import Navbar from '../components/NavBar';
-import Footer from '../components/Footer';
-import { Link } from 'react-router-dom'; 
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Img from "../assets/images/image7.jpg";
+// BlogPostPage.tsx
+import '../assets/styles/BlogPostPage.css';
+
 
 const BlogPostPage: React.FC = () => {
- // Fetch data from supabase
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [liked, setLiked] = useState(false);
+  const { id } = useParams();
+
   const fetchBlogs = async () => {
     const { data, error } = await supabase
       .from("blogs")
@@ -30,87 +32,97 @@ const BlogPostPage: React.FC = () => {
 
   useEffect(() => {
     fetchBlogs();
-
     const channel = supabase
       .channel("blogs-realtime")
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "blogs" },
-        () => fetchBlogs()
-      )
+      .on("postgres_changes", { event: "*", schema: "public", table: "blogs" }, fetchBlogs)
       .subscribe();
-
     return () => {
       supabase.removeChannel(channel);
     };
   }, []);
 
-  
-  const { id } = useParams();
-  const post = blogs.find(b => b.id === id);
-  const [liked, setLiked] = useState(false);
-
-  if (!post) return <p>Post not found.</p>;
+  const post = blogs.find((b) => b.id === id);
+  if (!post) return <p className="text-center mt-5">Post not found.</p>;
 
   return (
     <>
-    <Navbar />
-    <div 
-      className="d-flex align-items-center text-white z-1 mb-0"
-      style={{
-        position: 'relative',
-        height: '50vh',
-        background: `url(${Img})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'center',
-        borderRadius: '0 0 15px 15px'
+      <Navbar />
 
-      }}
-      data-aos='fade-up'
+      {/* Hero Section */}
+      <div
+        className="position-relative text-white"
+        style={{
+          height: "60vh",
+          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(${Img})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderBottomLeftRadius: "20px",
+          borderBottomRightRadius: "20px",
+        }}
       >
-      <div style={{margin:'240px 0 0 50px'}}>
-        <h1>BLOG</h1>
-        <p>
-          <Link to="/" className="text-white fw-bold text-decoration-none fs-6">HOME</Link>
-          &nbsp;&nbsp;|| &nbsp;&nbsp;
-          <Link to='/blog' className="text-white fw-bold text-decoration-none fs-6">
-            BLOG
-          </Link>
-        </p>
-      </div>
-    </div>
-    <div className="container py-5">
-      <h2 className="fw-bold mb-1">{post.title}</h2>
-      <p className="text-muted mb-4">
-        {post.author_name} • {format(new Date(post.date), "MMM d, yyyy")}
-      </p>
-
-      {/* Thumbnail / hero */}
-      <img src={post.thumbnail_url} className="img-fluid rounded mb-4" alt={post.title} data-aos="zoom-in" />
-
-      {/* Body – assuming HTML/markdown already converted */}
-      <div dangerouslySetInnerHTML={{ __html: post.body }} />
-
-      {/* Actions */}
-      <div className="d-flex gap-3 mt-5">
-        <button className="btn btn-outline-danger" onClick={() => setLiked(!liked)}>
-          {liked ? <FaHeart /> : <FaRegHeart />} {liked ? "Unlike" : "Like"}
-        </button>
-        <button
-          className="btn btn-outline-secondary"
-          onClick={() => navigator.clipboard.writeText(window.location.href)}
-        >
-          <FaShareAlt /> Copy Link
-        </button>
+        <div className="container h-100 d-flex flex-column justify-content-end pb-5" data-aos="fade-up">
+          <h1 className="display-4 fw-bold">{post.title}</h1>
+          <p className="text-light mb-1">
+            {post.author_name} • {format(new Date(post.date), "MMMM d, yyyy")}
+          </p>
+          <p>
+            <Link to="/" className="text-white fw-bold text-decoration-none fs-6">
+              HOME
+            </Link>
+            &nbsp;&nbsp;|| &nbsp;&nbsp;
+            <Link to="/blog" className="text-white fw-bold text-decoration-none fs-6">
+              BLOG
+            </Link>
+          </p>
+        </div>
       </div>
 
-      {/* Placeholder for comments */}
-      <div className="mt-5">
-        <h5>Comments</h5>
-        <p className="text-muted">Comment system coming soon…</p>
+      {/* Blog Content Section */}
+      <div className="container my-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-10 col-md-12">
+            <div className="bg-white p-4 p-md-5 shadow-sm rounded-4" data-aos="fade-up">
+              {/* Thumbnail */}
+              <img
+                src={post.thumbnail_url}
+                alt={post.title}
+                className="img-fluid rounded mb-4 w-100"
+                style={{ maxHeight: "450px", objectFit: "cover" }}
+              />
+
+              {/* Content Body */}
+              <div className="blog-body-styled" dangerouslySetInnerHTML={{ __html: post.body }} />
+
+              {/* Action Buttons */}
+              <div className="d-flex gap-3 mt-4 flex-wrap">
+                <button className="btn btn-outline-danger" onClick={() => setLiked(!liked)}>
+                  {liked ? <FaHeart /> : <FaRegHeart />} {liked ? "Unlike" : "Like"}
+                </button>
+                <button
+                  className="btn btn-outline-secondary"
+                  onClick={() => navigator.clipboard.writeText(window.location.href)}
+                >
+                  <FaShareAlt /> Share
+                </button>
+                <button className="btn btn-outline-primary" disabled>
+                  <FaCommentDots /> Comment
+                </button>
+                <button className="btn btn-outline-dark" disabled>
+                  <FaUserPlus /> Follow Author
+                </button>
+              </div>
+
+              {/* Comments Section */}
+              <div className="mt-5 border-top pt-4">
+                <h5 className="fw-bold">Comments</h5>
+                <p className="text-muted">Comment system coming soon…</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <Footer />
+
+      <Footer />
     </>
   );
 };

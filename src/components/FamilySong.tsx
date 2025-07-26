@@ -101,8 +101,12 @@ const FamilySong: React.FC = () => (
       <div className="fs-circle">
         
         <p className="lead mt-3 animated-text fw-bold">
-          We are Family of God<br/> We are Family of God<br/><br/>A Fellowship with a difference<br/>We are Family of God<br/><br/>We Preach, Teach and Pray.<br/>We are Family of God<br/><br/>
-          We are heirs of the Father, we are jointed, We are one, Amen.<br/>We are Children of the kingdom, We are Family, We are one
+          We are Family of God<br/> We are Family of God<br/><br/>We are Family of God<br/> We are Family of God<br/><br/>
+          A Fellowship with a difference<br/>We are Family of God<br/><br/>
+          We Preach, Teach and Pray.<br/>We are Family of God<br/><br/>
+          We are United in love.<br/>We are Family of God<br/><br/>
+
+          We are heirs of the Father, We are jointed with the Son, Amen.<br/>We are Children of the kingdom, We are Family, We are one
         </p>
         <h4 className='animated-text fw-bold text-center mb-5'>ACCF!!!<br/>A FELLOWSHIP WITH A DIFFERENCE<br/><br/>ACCF!!!<br/>WE PREACH, TEACH AND PRAY<br/></h4>
       </div>
