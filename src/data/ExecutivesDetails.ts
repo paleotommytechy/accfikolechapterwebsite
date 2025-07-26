@@ -163,7 +163,7 @@ export const executives = [
     email: "ifeoluwaesan52@gmail.com",
   },
   {
-    name: "Aribisala Marvelous",
+    name: "Aribisala Marvellous",
     position: "Assistant Sister's Coordinator",
     image: marvelous,
     whatsapp: "2349161083133",

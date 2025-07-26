@@ -1,5 +1,4 @@
 import { Card, Col, Row, Button } from 'react-bootstrap';
-// import { sermons } from '../data/sermons';
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 
@@ -12,7 +11,7 @@ const SermonGrid = () => {
       setSermons(data || []);
     };
     fetch();
-  }, []);
+  }, []); 
   return (
     <Row className="g-4" data-aos="fade-up">
       {sermons.map((sermon) => (
@@ -22,7 +21,7 @@ const SermonGrid = () => {
               variant="top"
               src={sermon.thumbnail}
               alt={sermon.title}
-              style={{ height: '200px', objectFit: 'cover' }}
+              style={{ height: '300px', objectFit: 'cover' }}
             />
             <Card.Body>
               <Card.Title>{sermon.title}</Card.Title>

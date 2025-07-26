@@ -1,14 +1,59 @@
 // src/components/SermonInfo.tsx
-import { useEffect } from 'react';
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import sermonImage from '../assets/images/executives/precious.jpg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
+interface Sermon {
+  id: number;
+  title: string;
+  speaker: string;
+  date: string;
+  thumbnail: string;
+  link: string;
+}
 
 const SermonInfo = () => {
+  const [sermon, setSermon] = useState<Sermon | null>(null);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    const fetchSermon = async () => {
+      const { data, error } = await supabase
+        .from("sermons")
+        .select("*")
+        .order("date", { ascending: false })
+        .limit(1)
+        .single();
+
+      if (error) {
+        console.error("Error fetching sermon:", error);
+      } else {
+        setSermon(data);
+      }
+    };
+
+    fetchSermon();
   }, []);
+
+  // Helper to format the date like "7th of July, 2025"
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
+
+    const suffix =
+      day === 1 || day === 21 || day === 31
+        ? "st"
+        : day === 2 || day === 22
+        ? "nd"
+        : day === 3 || day === 23
+        ? "rd"
+        : "th";
+
+    return `${day}${suffix} of ${month}, ${year}`;
+  };
+
+  if (!sermon) return null;
 
   return (
     <section className="py-5" id="sermon-info">
@@ -25,27 +70,28 @@ const SermonInfo = () => {
               <Row className="g-0 align-items-center">
                 <Col md={5}>
                   <Card.Img
-                    src={sermonImage}
-                    alt="Sermon"
+                    src={sermon.thumbnail}
+                    alt={sermon.title}
                     className="img-fluid rounded-start"
-                    
                   />
                 </Col>
                 <Col md={7}>
                   <Card.Body>
-                    <Card.Title className="fw-bold">Walking in Purpose</Card.Title>
+                    <Card.Title className="fw-bold">{sermon.title}</Card.Title>
                     <Card.Text>
-                      <small className="text-muted">By Brother Precious · July 6, 2025</small>
+                      <small className="text-muted">
+                        {sermon.speaker} · {formatDate(sermon.date)}
+                      </small>
                     </Card.Text>
-                    <Card.Text>
-                      Discover how to align your life with God’s purpose and walk boldly in your calling.
-                    </Card.Text>
-                    <Button 
+                    <Button
                       style={{
                         background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
                         color: '#fff',
-                      }} 
-                      href="/sermons">
+                      }}
+                      href={sermon.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Full Sermon
                     </Button>
                   </Card.Body>
