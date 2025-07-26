@@ -116,7 +116,7 @@ export const executives = [
   },
   {
     name: "Johnson Peter",
-    position: "Media Coordinator",
+    position: "Ushering Coordinator",
     image: peter,
     whatsapp: "2348142382505",
     facebook: "https://facebook.com/",
