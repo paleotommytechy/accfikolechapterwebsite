@@ -11,7 +11,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <section className="py-5 bg-white" id="contact">
+    <section className="py-5" id="contact">
       <Container>
         <Row className="mb-4 text-center">
           <h2 className="fw-bold">Contact Us</h2>

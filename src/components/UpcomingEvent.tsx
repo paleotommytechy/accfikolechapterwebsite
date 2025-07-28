@@ -39,8 +39,10 @@ const UpcomingEvent = () => {
     fetchUpcoming();
   }, []);
 
+  if (!event) return null;
+
   return (
-    <section className="py-2 bg-white" id="event">
+    <section className="py-2" id="event">
       <Container>
         <Row className="justify-content-center mb-4" data-aos="fade-up">
           <Col md={8} className="text-center">
@@ -77,7 +79,7 @@ const UpcomingEvent = () => {
                   <strong>Location:</strong> {event?.location}
                 </Card.Text>
                 
-                <Link to="/events" className="btn btn-outline-primary">Learn More</Link>
+                <Link to="/events" style={{ background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)', color: '#fff',}} className="btn btn-outline-primary rounded-pill">Learn More</Link>
               </Card.Body>
             </Card>
           </Col>

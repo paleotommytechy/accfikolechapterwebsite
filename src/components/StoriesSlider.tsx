@@ -41,7 +41,7 @@ const StoriesSlider = () => {
   }
 
   return (
-    <section className="py-5 bg-light" id="stories">
+    <section className="py-5" id="stories">
       <Container>
         <Row className="mb-4 text-center">
           <h2 className="fw-bold">Blogs & Devotional</h2>
@@ -76,7 +76,10 @@ const StoriesSlider = () => {
                           ? `${post.body.slice(0, 100)}...`
                           : post.body}
                       </Card.Text>
-                      <a href="/blog" className="btn btn-outline-primary mt-2">
+                      <a href="/blog" style={{
+                        background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+                        color: '#fff',
+                      }} className="btn btn-outline-primary mt-2 rounded-pill">
                         Read More Articles
                       </a>
                     </Card.Body>

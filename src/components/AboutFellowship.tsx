@@ -35,7 +35,7 @@ const AboutFellowship = () => {
 
   return (
     <>
-    <section className="about-section py-5 bg-light" id="about">
+    <section className="about-section py-5 " id="about">
       <Container>
         <Row className="align-items-center">
           <Col md={6} 

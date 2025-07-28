@@ -18,15 +18,15 @@ const AcademicRedirectCard: React.FC = () => {
         onClick={handleRedirect}
       >
         <Card.Body className="text-center">
-          <Card.Title className="fs-3 fw-bold text-primary">
+          <Card.Title className="fs-3 fw-bold ">
             Fuel Your Academic Journey
           </Card.Title>
-          <Card.Text className="fs-5 text-secondary mt-3">
+          <Card.Text className="fs-5  mt-3">
             Dive into a treasure trove of academic resources, past questions, and study materials to help you thrive as a Christian undergraduate.
           </Card.Text>
-          <Button
-            variant="primary"
+          <Button style={{ background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)', color: '#fff',}}
             className="mt-4 px-4 py-2 rounded-pill"
+            
             onClick={(e) => {
               e.stopPropagation();
               handleRedirect();

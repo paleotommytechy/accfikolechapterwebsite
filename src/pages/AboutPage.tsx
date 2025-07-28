@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
         <div data-aos="fade-up" data-aos-delay="100" className="mb-5">
           <h2 className="text-center text-info fw-bold mb-0">A BRIEF HISTORY ABOUT THE MINISTRY AND THE STUDENT WING</h2>
           <small className="mx-5 text-center text-muted"><i>An extraction from All Christian Fellowship Ministry Articles of faith</i></small><br/><br/>
-          <p className="text-secondary text-center mx-auto text-dark" style={{ maxWidth: '800px' }}>
+          <p className="text-center mx-auto " style={{ maxWidth: '800px' }}>
             The Ministry has a unique beginning in that she evolved out of the three district and independently organised fellowship groups which decided to fuse together to form the erstwhile "All Christian Fellowship Group" which was later christened All Christian Fellowship Ministry.<br/><br/>
 
             The name was formed by the coming together of three groups viz:<br/><br/>
@@ -72,24 +72,24 @@ const AboutPage: React.FC = () => {
         <div data-aos="fade-up" data-aos-delay="200" className="mb-5">
           <h2 className="text-center text-info fw-bold mb-3">Our Core Values</h2>
           <ul className="list-group list-group-flush mx-auto text-center" style={{ maxWidth: '600px' }}>
-            <li className="list-group-item bg-transparent text-dark">Faith in Jesus Christ</li>
-            <li className="list-group-item bg-transparent text-dark">Sound Biblical Teaching</li>
-            <li className="list-group-item bg-transparent text-dark">Fellowship & Unity</li>
-            <li className="list-group-item bg-transparent text-dark">Prayer & Evangelism</li>
-            <li className="list-group-item bg-transparent text-dark">Leadership Development</li>
+            <li className="list-group-item bg-transparent ">Faith in Jesus Christ</li>
+            <li className="list-group-item bg-transparent ">Sound Biblical Teaching</li>
+            <li className="list-group-item bg-transparent ">Fellowship & Unity</li>
+            <li className="list-group-item bg-transparent ">Prayer & Evangelism</li>
+            <li className="list-group-item bg-transparent ">Leadership Development</li>
           </ul>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="300" className="mb-5">
           <h2 className="text-center text-info fw-bold mb-3">What We Believe</h2>
-          <p className="lead text-secondary text-center mx-auto" style={{ maxWidth: '800px' }}>
+          <p className="lead  text-center mx-auto" style={{ maxWidth: '800px' }}>
             We believe in the infallible Word of God, the Trinity, salvation by grace through faith in Christ, and the empowerment of the Holy Spirit for daily Christian living.
           </p>
         </div>
 
         <div data-aos="fade-up" data-aos-delay="400" className="mb-5">
           <h2 className="text-center text-info fw-bold mb-3">Mission & Vision</h2>
-          <p className="text-secondary text-center mx-auto text-dark" style={{ maxWidth: '800px' }}>
+          <p className=" text-center mx-auto " style={{ maxWidth: '800px' }}>
             <strong>Our Mission:</strong> We embark on crusade and public rallies all over the campuses to evangelize. We also embark on evangelism by:<br/><br/>
 
               Personal contact<br/><br/>

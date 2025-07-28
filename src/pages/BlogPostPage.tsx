@@ -81,7 +81,7 @@ const BlogPostPage: React.FC = () => {
       <div className="container my-5">
         <div className="row justify-content-center">
           <div className="col-lg-10 col-md-12">
-            <div className="bg-white p-4 p-md-5 shadow-sm rounded-4" data-aos="fade-up">
+            <div className="p-4 p-md-5 shadow-sm rounded-4" data-aos="fade-up">
               {/* Thumbnail */}
               <img
                 src={post.thumbnail_url}

@@ -3,8 +3,8 @@ import '../assets/styles/NavBar.css'
 import { Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-import {FaSearch, FaHome, FaInfoCircle, FaBookOpen, FaCalendarAlt, FaBlog, FaGraduationCap, FaImages, FaEnvelope} from 'react-icons/fa'
-// import ThemeToggle from '../hooks/ThemeToggle'
+import {FaSearch, FaHome, FaInfoCircle, FaBookOpen, FaCalendarAlt, FaBlog, FaGraduationCap, FaImages, FaEnvelope,  FaDonate} from 'react-icons/fa'
+import ThemeToggle from '../hooks/ThemeToggle'
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <Link className="nav-link text-white" to="/contact" onClick={toggleSidebar}><FaEnvelope/> Contact</Link>
               </li>
               <li className="nav-item link-to-page">
-                <Link className="nav-link text-white" to="/donate" onClick={toggleSidebar}><FaEnvelope/> Donations</Link>
+                <Link className="nav-link text-white" to="/donate" onClick={toggleSidebar}><FaDonate /> Donations</Link>
               </li>
               
               <li className="nav-item d-flex gap-3 mt-2">
@@ -115,10 +115,10 @@ const Navbar = () => {
                 <a className="text-white fs-5" href="https://youtube.com" target="_blank" rel="noreferrer"><i className="bi bi-youtube"></i></a>
                 <a className="text-white fs-5" href="https://x.com" target="_blank" rel="noreferrer"><i className="bi bi-twitter"></i></a>
               </li>
-             {/* <li className="nav-item mt-0 mx-3">
+              <li className="nav-item mt-0 mx-3">
                 <ThemeToggle />
               </li>
-*/}            </ul>
+            </ul>
           </nav>
         </div>
       )}

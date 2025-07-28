@@ -83,17 +83,34 @@ const SermonInfo = () => {
                         {sermon.speaker} · {formatDate(sermon.date)}
                       </small>
                     </Card.Text>
-                    <Button
-                      style={{
-                        background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
-                        color: '#fff',
-                      }}
-                      href={sermon.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Full Sermon
-                    </Button>
+                    
+                    <div className="d-flex justify-content-center gap-5 flex-wrap  mt-5">
+                      <Button
+                        className="rounded-pill"
+                        style={{
+                          background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+                          color: '#fff',
+                        }}
+                        href={sermon.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Full Sermon
+                      </Button>
+
+                      <Button
+                        className="rounded-pill"
+                        style={{
+                          background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+                          color: '#fff',
+                        }}
+                        variant="outline-primary"
+                        href="/sermons"
+                      >
+                        View More Sermons
+                      </Button>
+                    </div>
+
                   </Card.Body>
                 </Col>
               </Row>

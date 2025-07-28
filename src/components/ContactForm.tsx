@@ -1,18 +1,24 @@
 // src/components/ContactForm.tsx
 import React, { useRef, useState } from "react";
+import { format } from "date-fns";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
-const SERVICE_ID  = "service_u8qd6ni";
-const TEMPLATE_ID = "template_3n89vr8";
-const PUBLIC_KEY  = "sH53aZOAev148aQVy";
+const SERVICE_ID  = "service_1vvvjqt";
+const TEMPLATE_ID = "template_ouo4t6u";
+const PUBLIC_KEY  = "sL8n6_XZhlV0_-Ju-";
 
 const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const dateRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
+    if (!formRef.current || !dateRef.current) return;
+
+    const formattedDate = format(new Date(), "EEEE, MMMM d, yyyy");
+  dateRef.current.value = formattedDate;
 
     setStatus("sending");
 
@@ -20,8 +26,14 @@ const ContactForm: React.FC = () => {
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
         publicKey: PUBLIC_KEY,
       })
-      .then(() => setStatus("sent"))
-      .catch(() => setStatus("error"));
+      .then(() => {
+        setStatus("sent");
+        toast.success("Thank you! We’ll reply soon.");
+      })
+      .catch(() => {
+        setStatus("error");
+        toast.error("Oops—please try again.");
+      });
   };
 
   return (
@@ -43,12 +55,13 @@ const ContactForm: React.FC = () => {
         <textarea name="message" rows={4} className="form-control" required />
       </div>
 
+      <input type="hidden" name="date" ref={dateRef} />
+
       <button className="btn btn-primary w-100" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Send"}
       </button>
 
-      {status === "sent"  && <p className="text-success mt-3">Thank you! We’ll reply soon.</p>}
-      {status === "error" && <p className="text-danger  mt-3">Oops—please try again.</p>}
+      
     </form>
   );
 };

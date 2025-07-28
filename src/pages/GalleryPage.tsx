@@ -34,7 +34,7 @@ const GalleryPage: React.FC = () => {
         </p>
       </div>
     </div>
-    <div className="position-relative min-vh-100 bg-light">
+    <div className="position-relative min-vh-100">
       
       <section className="py-5 text-center">
         <div className="container">

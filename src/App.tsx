@@ -17,12 +17,17 @@ import BlogPostPage from './pages/BlogPostPage'
 import AcademicsPage from './pages/AcademicsPage'
 import DonationPage from './pages/DonationPage'
 
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App: React.FC = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true }); 
   }, []);
   return (
+    <>
+     <ToastContainer position="top-right" autoClose={6000} />
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/sermons' element={<SermonPage />} />
@@ -37,6 +42,7 @@ const App: React.FC = () => {
       <Route path='/login' element={<LoginForm/>} />
       <Route path='/register' element={<RegisterForm />} />
     </Routes>
+    </>
   )
 }
 
