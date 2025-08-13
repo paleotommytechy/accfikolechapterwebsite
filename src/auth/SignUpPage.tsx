@@ -52,7 +52,7 @@ const SignupPage:React.FC = () => {
 		}
 	}
 	return(
-	  <div className="d-flex justify-content-center align-items-center min-vh-100 ">
+	  <div className="auth-body d-flex justify-content-center align-items-center min-vh-100 ">
 	      <div className="neumorphic-card p-4 rounded-4 text-center">
 	        <img
 	          src={logo}
