@@ -5,8 +5,8 @@ import AOS from "aos";
 import { useEffect } from "react";
 import React from 'react';
 import HomePage from './pages/HomePage';
-import LoginForm from './pages/Login';
-import RegisterForm from './pages/Register';
+import Login from './auth/LoginPage';
+import SignupPage from './auth/SignUpPage';
 import SermonPage from './pages/SermonPage'
 import EventPage from './pages/EventPage'
 import ContactPage from './pages/ContactPage'
@@ -16,6 +16,8 @@ import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import AcademicsPage from './pages/AcademicsPage'
 import DonationPage from './pages/DonationPage'
+import Dashboard from './auth/Dashboard'
+import ProtectedRoute from './auth/ProtectedRoute'
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -39,8 +41,16 @@ const App: React.FC = () => {
       <Route path='/blog/:id' element={<BlogPostPage />} />
       <Route path='/academics' element={<AcademicsPage />} />
       <Route path='/donate' element={<DonationPage />} />
-      <Route path='/login' element={<LoginForm/>} />
-      <Route path='/register' element={<RegisterForm />} />
+      <Route path='/login' element={<Login/>} />
+      <Route path='/register' element={<SignupPage />} />
+      <Route 
+        path='/dashboard' 
+        element={
+          <ProtectedRoute>
+          <Dashboard />
+          </ProtectedRoute>
+      } 
+        />
     </Routes>
     </>
   )
