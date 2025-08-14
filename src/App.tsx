@@ -18,6 +18,7 @@ import AcademicsPage from './pages/AcademicsPage'
 import DonationPage from './pages/DonationPage'
 import Dashboard from './auth/Dashboard'
 import ProtectedRoute from './auth/ProtectedRoute'
+import AuthCallback from './context/AuthCallback'
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -43,6 +44,7 @@ const App: React.FC = () => {
       <Route path='/donate' element={<DonationPage />} />
       <Route path='/login' element={<Login/>} />
       <Route path='/register' element={<SignupPage />} />
+      <Route path="/auth/callback" element={<AuthCallback />} />
       <Route 
         path='/dashboard' 
         element={

@@ -3,11 +3,12 @@ import '../assets/styles/Login.css'
 import logo from '../assets/logo.jpg'
 import { Link } from 'react-router-dom';
 import {useAuth} from '../context/AuthContext'
-import { supabase } from '../lib/supabaseClient'
 
 
 const SignupPage:React.FC = () => {
-	const {signUp} = useAuth();
+	const {signUp, signInWithGoogle} = useAuth();
+	// const navigate = useNavigate();
+	
 
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
@@ -39,18 +40,20 @@ const SignupPage:React.FC = () => {
 		}
 	}
 
+	  
 	const handleGoogleSignUp = async () => {
-		const { error } = await supabase.auth.signInWithOAuth({
-			provider:"google",
-			options:{
-				redirectTo: 'https://accfikolewebsite.vercel.app/dashboard'
-			}
-		});
+	  const { data, error } = await signInWithGoogle();
 
-		if (error){
-			console.error("Google Sign In Error:", error.message);
-		}
-	}
+	  if (error) {
+	    console.error("Google sign-up failed:", error.message);
+	    return;
+	  }else{
+	  	console.log("Google sign-up success:", data);
+	  	// navigate('/dashboard')
+	  }
+	};
+ 
+	
 	return(
 	  <div className="auth-body d-flex justify-content-center align-items-center min-vh-100 ">
 	      <div className="neumorphic-card p-4 rounded-4 text-center">
