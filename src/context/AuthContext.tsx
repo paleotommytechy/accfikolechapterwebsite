@@ -116,7 +116,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const redirectTo =
     import.meta.env.MODE === "development"
       ? "http://localhost:5173/auth/callback"
-      : "https://accfikolewebsite.vercel.app/dashboard";
+      : "https://accfikolewebsite.vercel.app/auth/callback";
 
     return await supabase.auth.signInWithOAuth({
       provider: "google",
