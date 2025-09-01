@@ -119,7 +119,7 @@ const Navbar = () => {
                 <ThemeToggle />
 
               </li>*/}
-              <Link className='btn btn-outline-success mt-2' to ="/dashboard">Dashboard</Link>
+              <a className='btn btn-outline-success mt-2' href="https://accfikolewebsite-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Dashboard</a>
             </ul>
           </nav>
         </div>

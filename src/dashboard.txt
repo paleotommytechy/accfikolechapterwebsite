@@ -1,0 +1,23 @@
+i want to design a dashboard like this using react tsx, with bootstrap, just write it in a file,
+Here are some of features i want in the dashboard:
+1. profile update like profile image, name, position in fellowship, level, department, gender, date of birth( not including year), whatsapp contact, hotline, email
+2. User Task Assignment
+3. Daily tasks
+4. Weekly challenge
+5. Leaderboard
+6. New post notification
+7. comment Notification
+8. Comment Notification
+9. Prayer Request section
+10. Bible Study Progress Tracker
+11. User Profile with Badges
+12. Coin store
+13. Level-up system
+14. Scripture of the day widget
+15. Event calendar
+16. Private Messaging
+17. Analytics for leaders
+18. Group Challenges
+19. Custom Notifications
+
+i want you to break them into cmponents and design them step by step one after the other, note that i am not implement a real time functionality now, just the design
