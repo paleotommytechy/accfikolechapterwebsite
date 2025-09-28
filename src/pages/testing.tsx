@@ -14,7 +14,7 @@ interface SupabaseImage {
   category: string; 
 }
 
-
+// ✨ THE ONLY CHANGE IS HERE ✨
 // The type your ImageGrid component now expects
 interface GalleryImage {
   src: string;

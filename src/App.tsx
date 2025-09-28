@@ -4,6 +4,8 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
 import React from 'react';
+
+//Pages
 import HomePage from './pages/HomePage';
 import Login from './auth/LoginPage';
 import SignupPage from './auth/SignUpPage';
@@ -16,13 +18,8 @@ import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import AcademicsPage from './pages/AcademicsPage'
 import DonationPage from './pages/DonationPage'
-// import Dashboard from './dashboard/dash'
-// import ProtectedRoute from './auth/ProtectedRoute'
-// import AuthCallback from './context/AuthCallback'
 
-
-// import DashboardLayout from "./dashboard/layouts/DashboardLayout";
-
+//Toast Notification
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -47,16 +44,6 @@ const App: React.FC = () => {
       <Route path='/donate' element={<DonationPage />} />
       <Route path='/login' element={<Login/>} />
       <Route path='/register' element={<SignupPage />} />
-      {/*<Route path="/auth/callback" element={<AuthCallback />} />
-      <Route 
-        path='/dashboard' 
-        element={
-          <ProtectedRoute>
-            
-          <Dashboard/>
-          </ProtectedRoute>
-      } 
-        />*/}
     </Routes>
     </>
   )

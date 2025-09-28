@@ -1,5 +1,5 @@
 // src/components/Gallery/ImageGrid.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react"; // Import useMemo
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from './common/Loader'
@@ -7,7 +7,8 @@ import LightboxModal from "./LightboxModal";
 import "./ImageGrid.css";
 
 /** ------------  Types ------------- */
-export type Category = "All" | "Sunday" | "Outreach" | "Events" ;
+// ✨ STEP 1: Change the Category type to be a flexible string
+export type Category = string;
 
 export interface GalleryImage {
   src: string;
@@ -24,6 +25,17 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
   const [visibleImages, setVisibleImages] = useState<GalleryImage[]>(images);
   const [loading, setLoading] = useState(true);
   const [activeImg, setActiveImg] = useState<string | null>(null);
+
+  // ✨ STEP 2: Dynamically create the list of categories
+  // useMemo ensures this logic only re-runs when the 'images' prop changes.
+  const categories = useMemo(() => {
+    // 1. Get all category values from the images
+    const allCats = images.map((img) => img.category);
+    // 2. Use a Set to get only the unique category names
+    const uniqueCats = [...new Set(allCats)];
+    // 3. Add "All" to the beginning of the list for the filter button
+    return ["All", ...uniqueCats];
+  }, [images]); // Dependency array: this code runs if 'images' changes
 
   /* initialise AOS once */
   useEffect(() => {
@@ -45,13 +57,18 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
       );
       setLoading(false);
     };
-    preload();
+    if (images.length > 0) {
+        preload();
+    } else {
+        setLoading(false);
+    }
   }, [images]);
 
   /* update visibleImages when category changes */
   useEffect(() => {
-    if (selectedCategory === "All") setVisibleImages(images);
-    else {
+    if (selectedCategory === "All") {
+      setVisibleImages(images);
+    } else {
       setVisibleImages(
         images.filter((img) => img.category === selectedCategory)
       );
@@ -65,7 +82,8 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     <>
       {/* ---------- Filter Buttons ---------- */}
       <div className="text-center mb-4" data-aos="fade-down">
-        {(["All", "Sunday", "Outreach", "Events"] as Category[]).map((cat) => (
+        {/* ✨ STEP 3: Map over the new dynamic 'categories' array */}
+        {categories.map((cat) => (
           <button
             key={cat}
             className={`btn btn-sm mx-2 ${
@@ -78,7 +96,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
         ))}
       </div>
 
-      {/* ---------- Image Grid ---------- */}
+      {/* ---------- Image Grid (No changes here) ---------- */}
       <div className="row g-3">
         {visibleImages.map((img, idx) => (
           <div
@@ -103,7 +121,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
         ))}
       </div>
 
-      {/* ---------- Lightbox ---------- */}
+      {/* ---------- Lightbox (No changes here)---------- */}
       {activeImg && (
         <LightboxModal image={activeImg} onClose={() => setActiveImg(null)} />
       )}
