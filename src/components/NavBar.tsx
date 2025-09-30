@@ -3,7 +3,7 @@ import '../assets/styles/NavBar.css'
 import { Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-import {FaSearch, FaHome, FaInfoCircle, FaBookOpen, FaCalendarAlt, FaBlog, FaGraduationCap, FaImages, FaEnvelope,  FaDonate} from 'react-icons/fa'
+import {FaSearch, FaHome, FaInfoCircle, FaBookOpen, FaCalendarAlt, FaGraduationCap, FaEnvelope,  FaDonate} from 'react-icons/fa'
 // import ThemeToggle from '../hooks/ThemeToggle'
 
 const Navbar = () => {
@@ -45,9 +45,9 @@ const Navbar = () => {
             <li className="nav-item" ><Link className="nav-link" to="/about"> About</Link></li>
             <li className="nav-item" ><Link className="nav-link" to="/sermons">Sermons</Link></li>
             <li className="nav-item" ><Link className="nav-link" to="/events">Events</Link></li>
-            <li className="nav-item"> <Link className="nav-link" to="/blog">Blog</Link></li>
+            {/* <li className="nav-item"> <Link className="nav-link" to="/blog">Blog</Link></li> */}
             <li className="nav-item"> <Link className="nav-link" to="/academics">Academics</Link></li>
-            <li className="nav-item"> <Link className="nav-link" to="/gallery">Gallery</Link></li>
+            {/* <li className="nav-item"> <Link className="nav-link" to="/gallery">Gallery</Link></li> */}
             <li className="nav-item"> <Link className="nav-link" to="/contact">Contact</Link></li>
             <li className="nav-item"> <Link className="nav-link btn btn-outline-primary ms-2" to="/donate">Donate</Link></li>
           </ul>
@@ -92,15 +92,15 @@ const Navbar = () => {
               <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/events" onClick={toggleSidebar}><FaCalendarAlt/> Events</Link>
               </li>
-              <li className="nav-item link-to-page">
+              {/* <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/blog" onClick={toggleSidebar}><FaBlog/> Blog</Link>
-              </li>
+              </li> */}
               <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/academics" onClick={toggleSidebar}><FaGraduationCap/> Academics</Link>
               </li>
-              <li className="nav-item link-to-page">
+              {/* <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/gallery" onClick={toggleSidebar}><FaImages/> Gallery</Link>
-              </li>
+              </li> */}
               <li className="nav-item link-to-page">
                 <Link className="nav-link text-white" to="/contact" onClick={toggleSidebar}><FaEnvelope/> Contact</Link>
               </li>

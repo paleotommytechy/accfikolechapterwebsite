@@ -28,9 +28,9 @@ const Footer = () => {
             'About',
             'Sermons',
             'Events',
-            'Blog',
+            // 'Blog',
             'Academics',
-            'Gallery',
+            // 'Gallery',
             'Contact',
             'Donate'
           ].map((link, index)=>(
