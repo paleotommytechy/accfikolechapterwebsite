@@ -5,11 +5,12 @@ import HeroSection from '../components/HeroSection';
 import AboutFellowship from '../components/AboutFellowship';
 import SermonInfo from '../components/SermonInfo';
 import UpcomingEvent from '../components/UpcomingEvent';
-import StoriesSlider from '../components/StoriesSlider';
+// import StoriesSlider from '../components/StoriesSlider';
 import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 import FamilySong from "../components/FamilySong"
 import AcademicRedirectCard from '../components/AcademicRedirectCard';
+import DashboardCTA from '../components/Dashboard-CTA';
 
 
 const HomePage: React.FC = () => {
@@ -18,12 +19,14 @@ const HomePage: React.FC = () => {
     <div style={{ overflowX: 'hidden', width: '100%', margin: 0, padding: 0 }}>
       <NavBar />
       <HeroSection />
+      
       <AboutFellowship />
+      < DashboardCTA />
       <div className="container py-4 px-6"><FamilySong /></div>
       <AcademicRedirectCard />
       <SermonInfo />
       <UpcomingEvent />
-      <StoriesSlider />
+      {/* <StoriesSlider /> */}
       <ContactUs />
       <Footer />
     </div>
